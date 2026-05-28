@@ -1,55 +1,53 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
 
-export default function App() {
-      return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>¡Hola mundo!</Text>
-
-      <View style={styles.filas}>
-        <View style={styles.caja1} />
-        <View style={styles.caja2} />
-        <View style={styles.caja3} />
-      </View>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
-  },    
-
-  titulo: {
-    fontSize: 24,
-    color: 'blue',
-    marginBottom: 30,
-  },
-
-  filas: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    width: '100%',
   },
 
-  caja1: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'red',
+  vista: {
+    width: 250,
+    height: 250,
   },
 
-  caja2: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'green',
-  },
-
-  caja3: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'cyan',
-  },
+  rojo: { backgroundColor: 'red' },
+  negro: { backgroundColor: 'black' },
+  cian: { backgroundColor: 'cyan' },
+  azul: { backgroundColor: 'blue' },
 });
+
+type cajasProps = {
+  color: 'rojo' | 'azul' | 'cian';
+};
+
+function Caja({ color }: cajasProps) {
+  const [activado, setActivado] = useState(true);
+  
+  return (
+    <>
+      <Pressable onPress={() => setActivado(!activado)}> 
+        <View
+          style={[
+            style.vista,
+            activado ? style[color] : style.negro
+          ]}
+        />
+      </Pressable>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <View style={style.container}>
+      <Caja color="rojo" />
+      <Caja color="azul" />
+      <Caja color="cian" />
+    </View>
+  );
+}
