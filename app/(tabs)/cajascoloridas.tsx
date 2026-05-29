@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 const style = StyleSheet.create({
   container: {
@@ -8,11 +8,14 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+
   },
 
   vista: {
     width: 250,
     height: 250,
+    marginLeft:20,
+    marginRight:20
   },
 
   rojo: { backgroundColor: 'red' },
