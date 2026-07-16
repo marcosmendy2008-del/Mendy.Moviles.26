@@ -6,7 +6,6 @@ export default function Saludo() {
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         
-        {/* PRIMERA CARD - Miyabi */}
         <View style={styles.card}>
           <TextInput
             placeholder="¡ingrese su nombre aqui!"
@@ -24,7 +23,6 @@ export default function Saludo() {
           <Button title="boton generico" onPress={() => alert("boton presionado")} />
         </View>
 
-        {/* SEGUNDA CARD - Vivian */}
         <View style={styles.card}>
           <TextInput
             placeholder="¡ingrese su nombre aqui!"
@@ -34,7 +32,7 @@ export default function Saludo() {
 
           <Image
             source={{
-              uri: "https://media.tenor.com/BeY817MrRB8AAAAM/astra-yao-zzz.gif",
+              uri: "https://media.tenor.com/MohyFBVGbZUAAAAM/miyabi-sword.gif",
             }}
             style={styles.imagen}
           />
@@ -42,7 +40,7 @@ export default function Saludo() {
           <Button title="boton generico" onPress={() => alert("boton presionado")} />
         </View>
 
-        {/* TERCERA CARD - Cissia */}
+        
         <View style={styles.card}>
           <TextInput
             placeholder="¡ingrese su nombre aqui!"
@@ -65,7 +63,7 @@ export default function Saludo() {
   );
 }
 
-// Estilos ordenados abajo
+
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'white',
